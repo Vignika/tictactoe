@@ -3,11 +3,17 @@ import Square from "./Square";
 
 function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
+    const [xIsNext, setXIsNext] = useState(true);
 
     function handleClick(i) {
       const nextSquares = squares.slice();
-      nextSquares[i] = "X";
+      if (xIsNext) {
+        nextSquares[i] = "X";
+      } else {
+        nextSquares[i] = "O";
+      }
       setSquares(nextSquares);
+      setXIsNext(!xIsNext);
     }
   return (
     <>
@@ -37,3 +43,6 @@ export default Board;
 
 //function handleClick will be invoked only when the user clicks the button
 //<Square value={squares[3]} onSquareClick={() => handleClick(0)} />
+
+//when to use callback... ur not sure  how much time the function will take to complete
+//network call
