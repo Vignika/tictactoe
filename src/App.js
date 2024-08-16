@@ -1,14 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Square from './components/Square';
 import './styles.css';
-import Board from './components/Board';
+import Game from './components/Game';
 
 
 function App() {
   return (
     <div className="App">
-    <Board/>
+    <Game/>
     </div>
   );
 }
